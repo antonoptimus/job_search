@@ -1,14 +1,27 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from "react";
+import { View, Text, TouchableOpacity, Image, Linking } from "react-native";
 
-import styles from './footer.style'
+import styles from "./footer.style";
+import { icons } from "../../../constants";
 
-const Footer = () => {
+const Footer = ({ url }) => {
   return (
-    <View>
-      <Text>Footer</Text>
-    </View>
-  )
-}
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.likeBtn}>
+        <Image
+          style={styles.likeBtnImage}
+          resizeMode="contain"
+          source={icons.heartOutline}
+        />
+      </TouchableOpacity>
 
-export default Footer
+      <TouchableOpacity style={styles.applyBtn}>
+        <Text style={styles.applyBtnText} onPress={() => Linking.openURL(url)}>
+          Apply for job
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default Footer;
