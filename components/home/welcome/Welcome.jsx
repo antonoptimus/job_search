@@ -7,11 +7,11 @@ import {
   Image,
   FlatList,
 } from "react-native";
-
 import { useRouter } from "expo-router";
 
 import styles from "./welcome.style";
 import { icons, SIZES } from "../../../constants";
+
 const jobTypes = ["Full-time", "Part-time", "Contractor"];
 
 const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
@@ -34,6 +34,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
             placeholder="What are you looking for?"
           />
         </View>
+
         <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>
           <Image
             source={icons.search}

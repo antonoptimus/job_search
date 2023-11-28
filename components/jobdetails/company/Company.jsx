@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 
 import styles from "./company.style";
+import { icons } from "../../../constants";
 import { checkImageURL } from "../../../utils";
 
 const Company = ({ companyLogo, jobTitle, companyName, location }) => {
@@ -23,7 +24,7 @@ const Company = ({ companyLogo, jobTitle, companyName, location }) => {
       </View>
 
       <View style={styles.companyInfoBox}>
-        <Text style={styles.companyName}>{companyName}</Text>
+        <Text style={styles.companyName}>{companyName} </Text>
         <View style={styles.locationBox}>
           <Image
             source={icons.location}
